@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{55762bfb-aa1f-4fa7-b071-1eca27054f03}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>eval.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <InterpreterVersion />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="common.py" />
+    <Compile Include="core\feature_extractor.py" />
+    <Compile Include="core\preprocess_utils.py" />
+    <Compile Include="core\preprocess_utils_test.py" />
+    <Compile Include="core\xception.py" />
+    <Compile Include="core\xception_test.py" />
+    <Compile Include="core\__init__.py" />
+    <Compile Include="datasets\build_cityscapes_data.py" />
+    <Compile Include="datasets\build_data.py" />
+    <Compile Include="datasets\build_voc2012_data.py" />
+    <Compile Include="datasets\remove_gt_colormap.py" />
+    <Compile Include="datasets\segmentation_dataset.py" />
+    <Compile Include="datasets\__init__.py" />
+    <Compile Include="eval.py" />
+    <Compile Include="export_model.py" />
+    <Compile Include="input_preprocess.py" />
+    <Compile Include="model.py" />
+    <Compile Include="model_test.py" />
+    <Compile Include="train.py" />
+    <Compile Include="utils\get_dataset_colormap.py" />
+    <Compile Include="utils\get_dataset_colormap_test.py" />
+    <Compile Include="utils\input_generator.py" />
+    <Compile Include="utils\save_annotation.py" />
+    <Compile Include="utils\train_utils.py" />
+    <Compile Include="utils\__init__.py" />
+    <Compile Include="vis.py" />
+    <Compile Include="__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="g3doc\img\image1.jpg" />
+    <Content Include="g3doc\img\image2.jpg" />
+    <Content Include="g3doc\img\image3.jpg" />
+    <Content Include="g3doc\img\image_info.txt" />
+    <Content Include="g3doc\img\vis1.png" />
+    <Content Include="g3doc\img\vis2.png" />
+    <Content Include="g3doc\img\vis3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="core" />
+    <Folder Include="datasets" />
+    <Folder Include="g3doc\img" />
+    <Folder Include="utils" />
+  </ItemGroup>
+  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+</Project>
